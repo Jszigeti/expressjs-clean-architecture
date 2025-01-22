@@ -8,7 +8,7 @@ Express.js and TypeScript.
 ### Prerequisites
 
 - Node.js
-- npm
+- pnpm (or npm/yarn)
 
 ### Installation
 
@@ -27,18 +27,15 @@ Express.js and TypeScript.
 3. Install dependencies:
 
    ```sh
-   npm install
+   pnpm install
    ```
 
-4. Create .env file: The application uses environment variables defined in the
-   `.env` file. Make sure to set the necessary variables before running the
-   application.
-
+4. Create .env file:
    Here is an example of the `.env` file configuration:
 
    ```sh
     NODE_ENV=development
-    PORT=3000
+    PORT=8000
    ```
 
 ### Running the Application
@@ -46,10 +43,10 @@ Express.js and TypeScript.
 To start the application in development mode, run:
 
 ```sh
-npm run dev
+pnpm run dev
 ```
 
-The server will start on the port specified in the .env file.
+The server will start on the port specified in the .env file (default is 8000).
 
 ### Project Structure
 
@@ -58,11 +55,25 @@ The server will start on the port specified in the .env file.
     - `api/` API related files
       - `api.config.ts` Configuration for the API
       - `index.ts` Entry point for the API
+      - `controllers/book/` Book related controllers
+        - `book.codec.ts`
+        - `book.controller.ts`
+        - `dto/` Data Transfer Objects
+          - `book.dto.ts`
+          - `get-book.dto.ts`
+          - `post-book.dto.ts`
+  - `index.ts` Main entry point
+
+### Configuration
+
+The application uses environment variables defined in the `.env` file. Make sure
+to set the necessary variables before running the application.
 
 ### Scripts
 
 - `dev`: Starts the application in development mode using nodemon
 - `lint`: Checks the code formatting using Prettier
+- `build`: Generates the OpenAPI specification and routes using tsoa
 
 ## License
 
