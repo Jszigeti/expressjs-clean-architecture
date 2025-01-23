@@ -6,7 +6,7 @@
 		"requestBodies": {},
 		"responses": {},
 		"schemas": {
-			"ReturnType_typeofGetBooksOutputDto.parse_": {
+			"ReturnType_typeofGetRecipesOutputDto.parse_": {
 				"items": {
 					"properties": {
 						"totalPages": {
@@ -31,10 +31,10 @@
 				"type": "array",
 				"description": "Obtain the return type of a function type"
 			},
-			"GetBooksOutputDto": {
-				"$ref": "#/components/schemas/ReturnType_typeofGetBooksOutputDto.parse_"
+			"GetRecipesOutputDto": {
+				"$ref": "#/components/schemas/ReturnType_typeofGetRecipesOutputDto.parse_"
 			},
-			"ReturnType_typeofGetBookOutputDto.parse_": {
+			"ReturnType_typeofGetRecipeOutputDto.parse_": {
 				"properties": {
 					"totalPages": {
 						"type": "number",
@@ -56,10 +56,10 @@
 				"type": "object",
 				"description": "Obtain the return type of a function type"
 			},
-			"GetBookOutputDto": {
-				"$ref": "#/components/schemas/ReturnType_typeofGetBookOutputDto.parse_"
+			"GetRecipeOutputDto": {
+				"$ref": "#/components/schemas/ReturnType_typeofGetRecipeOutputDto.parse_"
 			},
-			"ReturnType_typeofPostBookOutputDto.parse_": {
+			"ReturnType_typeofPostRecipeOutputDto.parse_": {
 				"properties": {
 					"totalPages": {
 						"type": "number",
@@ -81,10 +81,10 @@
 				"type": "object",
 				"description": "Obtain the return type of a function type"
 			},
-			"PostBookOutputDto": {
-				"$ref": "#/components/schemas/ReturnType_typeofPostBookOutputDto.parse_"
+			"PostRecipeOutputDto": {
+				"$ref": "#/components/schemas/ReturnType_typeofPostRecipeOutputDto.parse_"
 			},
-			"ReturnType_typeofPostBookInputDto.parse_": {
+			"ReturnType_typeofPostRecipeInputDto.parse_": {
 				"properties": {
 					"totalPages": {
 						"type": "number",
@@ -103,8 +103,8 @@
 				"type": "object",
 				"description": "Obtain the return type of a function type"
 			},
-			"PostBookInputDto": {
-				"$ref": "#/components/schemas/ReturnType_typeofPostBookInputDto.parse_"
+			"PostRecipeInputDto": {
+				"$ref": "#/components/schemas/ReturnType_typeofPostRecipeInputDto.parse_"
 			}
 		},
 		"securitySchemes": {}
@@ -122,7 +122,7 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
-		"/books": {
+		"/recipes": {
 			"get": {
 				"operationId": "List",
 				"responses": {
@@ -131,15 +131,15 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/GetBooksOutputDto"
+									"$ref": "#/components/schemas/GetRecipesOutputDto"
 								}
 							}
 						}
 					}
 				},
-				"summary": "Get all books",
+				"summary": "Get all recipes",
 				"tags": [
-					"Books"
+					"Recipes"
 				],
 				"security": [],
 				"parameters": []
@@ -152,15 +152,15 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/PostBookOutputDto"
+									"$ref": "#/components/schemas/PostRecipeOutputDto"
 								}
 							}
 						}
 					}
 				},
-				"summary": "Create a book",
+				"summary": "Create a recipe",
 				"tags": [
-					"Books"
+					"Recipes"
 				],
 				"security": [],
 				"parameters": [],
@@ -169,14 +169,14 @@
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "#/components/schemas/PostBookInputDto"
+								"$ref": "#/components/schemas/PostRecipeInputDto"
 							}
 						}
 					}
 				}
 			}
 		},
-		"/books/{id}": {
+		"/recipes/{id}": {
 			"get": {
 				"operationId": "GetById",
 				"responses": {
@@ -185,20 +185,20 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/GetBookOutputDto"
+									"$ref": "#/components/schemas/GetRecipeOutputDto"
 								}
 							}
 						}
 					}
 				},
-				"summary": "Get a book by id",
+				"summary": "Get a recipe by id",
 				"tags": [
-					"Books"
+					"Recipes"
 				],
 				"security": [],
 				"parameters": [
 					{
-						"description": "The book's identifier",
+						"description": "The recipe's identifier",
 						"in": "path",
 						"name": "id",
 						"required": true,
@@ -215,14 +215,14 @@
 						"description": ""
 					}
 				},
-				"summary": "Delete a book by id",
+				"summary": "Delete a recipe by id",
 				"tags": [
-					"Books"
+					"Recipes"
 				],
 				"security": [],
 				"parameters": [
 					{
-						"description": "The book's identifier",
+						"description": "The recipe's identifier",
 						"in": "path",
 						"name": "id",
 						"required": true,

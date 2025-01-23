@@ -55,13 +55,13 @@ The server will start on the port specified in the .env file (default is 8000).
     - `api/` API related files
       - `api.config.ts` Configuration for the API
       - `index.ts` Entry point for the API
-      - `controllers/book/` Book related controllers
-        - `book.codec.ts`
-        - `book.controller.ts`
+      - `controllers/recipe/` Recipe related controllers
+        - `recipe.codec.ts`
+        - `recipe.controller.ts`
         - `dto/` Data Transfer Objects
-          - `book.dto.ts`
-          - `get-book.dto.ts`
-          - `post-book.dto.ts`
+          - `recipe.dto.ts`
+          - `get-recipe.dto.ts`
+          - `post-recipe.dto.ts`
   - `index.ts` Main entry point
 
 ### Configuration

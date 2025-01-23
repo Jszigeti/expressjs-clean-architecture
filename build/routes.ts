@@ -3,50 +3,50 @@
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { Controller, ValidationService, FieldErrors, ValidateError, TsoaRoute, HttpStatusCodeLiteral, TsoaResponse, fetchMiddlewares } from '@tsoa/runtime';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-import { BookController } from './../src/infrastructure/api/controllers/book/book.controller';
+import { RecipeController } from './../src/infrastructure/api/controllers/recipe/recipe.controller';
 import type { RequestHandler, Router } from 'express';
 
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
-    "ReturnType_typeofGetBooksOutputDto.parse_": {
+    "ReturnType_typeofGetRecipesOutputDto.parse_": {
         "dataType": "refAlias",
         "type": {"dataType":"array","array":{"dataType":"nestedObjectLiteral","nestedProperties":{"totalPages":{"dataType":"double"},"author":{"dataType":"string"},"summary":{"dataType":"string"},"title":{"dataType":"string"},"id":{"dataType":"string"}}},"validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "GetBooksOutputDto": {
+    "GetRecipesOutputDto": {
         "dataType": "refAlias",
-        "type": {"ref":"ReturnType_typeofGetBooksOutputDto.parse_","validators":{}},
+        "type": {"ref":"ReturnType_typeofGetRecipesOutputDto.parse_","validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "ReturnType_typeofGetBookOutputDto.parse_": {
-        "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"totalPages":{"dataType":"double"},"author":{"dataType":"string"},"summary":{"dataType":"string"},"title":{"dataType":"string"},"id":{"dataType":"string"}},"validators":{}},
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "GetBookOutputDto": {
-        "dataType": "refAlias",
-        "type": {"ref":"ReturnType_typeofGetBookOutputDto.parse_","validators":{}},
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "ReturnType_typeofPostBookOutputDto.parse_": {
+    "ReturnType_typeofGetRecipeOutputDto.parse_": {
         "dataType": "refAlias",
         "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"totalPages":{"dataType":"double"},"author":{"dataType":"string"},"summary":{"dataType":"string"},"title":{"dataType":"string"},"id":{"dataType":"string"}},"validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "PostBookOutputDto": {
+    "GetRecipeOutputDto": {
         "dataType": "refAlias",
-        "type": {"ref":"ReturnType_typeofPostBookOutputDto.parse_","validators":{}},
+        "type": {"ref":"ReturnType_typeofGetRecipeOutputDto.parse_","validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "ReturnType_typeofPostBookInputDto.parse_": {
+    "ReturnType_typeofPostRecipeOutputDto.parse_": {
+        "dataType": "refAlias",
+        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"totalPages":{"dataType":"double"},"author":{"dataType":"string"},"summary":{"dataType":"string"},"title":{"dataType":"string"},"id":{"dataType":"string"}},"validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "PostRecipeOutputDto": {
+        "dataType": "refAlias",
+        "type": {"ref":"ReturnType_typeofPostRecipeOutputDto.parse_","validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "ReturnType_typeofPostRecipeInputDto.parse_": {
         "dataType": "refAlias",
         "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"totalPages":{"dataType":"double"},"author":{"dataType":"string"},"summary":{"dataType":"string"},"title":{"dataType":"string"}},"validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "PostBookInputDto": {
+    "PostRecipeInputDto": {
         "dataType": "refAlias",
-        "type": {"ref":"ReturnType_typeofPostBookInputDto.parse_","validators":{}},
+        "type": {"ref":"ReturnType_typeofPostRecipeInputDto.parse_","validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 };
@@ -59,11 +59,11 @@ export function RegisterRoutes(app: Router) {
     //  NOTE: If you do not see routes for all of your controllers in this file, then you might not have informed tsoa of where to look
     //      Please look into the "controllerPathGlobs" config option described in the readme: https://github.com/lukeautry/tsoa
     // ###########################################################################################################
-        app.get('/books',
-            ...(fetchMiddlewares<RequestHandler>(BookController)),
-            ...(fetchMiddlewares<RequestHandler>(BookController.prototype.list)),
+        app.get('/recipes',
+            ...(fetchMiddlewares<RequestHandler>(RecipeController)),
+            ...(fetchMiddlewares<RequestHandler>(RecipeController.prototype.list)),
 
-            function BookController_list(request: any, response: any, next: any) {
+            function RecipeController_list(request: any, response: any, next: any) {
             const args = {
             };
 
@@ -73,7 +73,7 @@ export function RegisterRoutes(app: Router) {
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
 
-                const controller = new BookController();
+                const controller = new RecipeController();
 
 
               const promise = controller.list.apply(controller, validatedArgs as any);
@@ -83,11 +83,11 @@ export function RegisterRoutes(app: Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-        app.get('/books/:id',
-            ...(fetchMiddlewares<RequestHandler>(BookController)),
-            ...(fetchMiddlewares<RequestHandler>(BookController.prototype.getById)),
+        app.get('/recipes/:id',
+            ...(fetchMiddlewares<RequestHandler>(RecipeController)),
+            ...(fetchMiddlewares<RequestHandler>(RecipeController.prototype.getById)),
 
-            function BookController_getById(request: any, response: any, next: any) {
+            function RecipeController_getById(request: any, response: any, next: any) {
             const args = {
                     id: {"in":"path","name":"id","required":true,"dataType":"string"},
             };
@@ -98,7 +98,7 @@ export function RegisterRoutes(app: Router) {
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
 
-                const controller = new BookController();
+                const controller = new RecipeController();
 
 
               const promise = controller.getById.apply(controller, validatedArgs as any);
@@ -108,13 +108,13 @@ export function RegisterRoutes(app: Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-        app.post('/books',
-            ...(fetchMiddlewares<RequestHandler>(BookController)),
-            ...(fetchMiddlewares<RequestHandler>(BookController.prototype.create)),
+        app.post('/recipes',
+            ...(fetchMiddlewares<RequestHandler>(RecipeController)),
+            ...(fetchMiddlewares<RequestHandler>(RecipeController.prototype.create)),
 
-            function BookController_create(request: any, response: any, next: any) {
+            function RecipeController_create(request: any, response: any, next: any) {
             const args = {
-                    requestBody: {"in":"body","name":"requestBody","required":true,"ref":"PostBookInputDto"},
+                    requestBody: {"in":"body","name":"requestBody","required":true,"ref":"PostRecipeInputDto"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -123,7 +123,7 @@ export function RegisterRoutes(app: Router) {
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
 
-                const controller = new BookController();
+                const controller = new RecipeController();
 
 
               const promise = controller.create.apply(controller, validatedArgs as any);
@@ -133,11 +133,11 @@ export function RegisterRoutes(app: Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-        app.delete('/books/:id',
-            ...(fetchMiddlewares<RequestHandler>(BookController)),
-            ...(fetchMiddlewares<RequestHandler>(BookController.prototype.delete)),
+        app.delete('/recipes/:id',
+            ...(fetchMiddlewares<RequestHandler>(RecipeController)),
+            ...(fetchMiddlewares<RequestHandler>(RecipeController.prototype.delete)),
 
-            function BookController_delete(request: any, response: any, next: any) {
+            function RecipeController_delete(request: any, response: any, next: any) {
             const args = {
                     id: {"in":"path","name":"id","required":true,"dataType":"string"},
             };
@@ -148,7 +148,7 @@ export function RegisterRoutes(app: Router) {
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
 
-                const controller = new BookController();
+                const controller = new RecipeController();
 
 
               const promise = controller.delete.apply(controller, validatedArgs as any);
