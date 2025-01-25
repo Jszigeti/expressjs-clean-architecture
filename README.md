@@ -30,12 +30,12 @@ Express.js and TypeScript.
    pnpm install
    ```
 
-4. Create .env file:
-   Here is an example of the `.env` file configuration:
+4. Create .env file: Here is an example of the `.env` file configuration:
 
    ```sh
     NODE_ENV=development
-    PORT=8000
+    PORT=3000
+    LOG_LEVEL=info
    ```
 
 ### Running the Application
@@ -46,22 +46,30 @@ To start the application in development mode, run:
 pnpm run dev
 ```
 
-The server will start on the port specified in the .env file (default is 8000).
+The server will start on the port specified in the .env file.
 
 ### Project Structure
 
 - `src/` Contains the source code
+  - `core`
+    - `ports` Core ports
+      - `logger.port.ts`
   - `infrastructure/`
+    - `adapters/` Adapters files
+      - `winston-logger/` Winston Logger related files
+        - `winston-logger.adapter.ts`
+        - `winston-logger.config.ts`
     - `api/` API related files
       - `api.config.ts` Configuration for the API
       - `index.ts` Entry point for the API
-      - `controllers/recipe/` Recipe related controllers
-        - `recipe.codec.ts`
-        - `recipe.controller.ts`
-        - `dto/` Data Transfer Objects
-          - `recipe.dto.ts`
-          - `get-recipe.dto.ts`
-          - `post-recipe.dto.ts`
+      - `controllers/` Controllers files
+        - `recipe/` Recipe related controllers
+          - `recipe.codec.ts`
+          - `recipe.controller.ts`
+          - `dto/` Data Transfer Objects
+            - `recipe.dto.ts`
+            - `get-recipe.dto.ts`
+            - `post-recipe.dto.ts`
   - `index.ts` Main entry point
 
 ### Configuration
@@ -74,7 +82,3 @@ to set the necessary variables before running the application.
 - `dev`: Starts the application in development mode using nodemon
 - `lint`: Checks the code formatting using Prettier
 - `build`: Generates the OpenAPI specification and routes using tsoa
-
-## License
-
-This project is licensed under the UNLICENSED License.

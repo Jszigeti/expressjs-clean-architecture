@@ -46,8 +46,9 @@ export class RecipeController extends Controller {
       id: 'mockId',
       title: 'mockTitle',
       summary: 'mockSummary',
+      desc: 'mockDesc',
       author: 'mockAuthor',
-      totalPages: 100,
+      category: 'mockCategory',
     };
   }
 
@@ -65,8 +66,9 @@ export class RecipeController extends Controller {
       id: 'mockId',
       title: 'mockTitle',
       summary: 'mockSummary',
+      desc: 'mockDesc',
       author: 'mockAuthor',
-      totalPages: 100,
+      category: 'mockCategory',
     };
   }
 
