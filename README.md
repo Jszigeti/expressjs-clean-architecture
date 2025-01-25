@@ -8,7 +8,7 @@ Express.js and TypeScript.
 ### Prerequisites
 
 - Node.js
-- pnpm (or npm/yarn)
+- npm (or pnpm/yarn)
 
 ### Installation
 
@@ -27,15 +27,22 @@ Express.js and TypeScript.
 3. Install dependencies:
 
    ```sh
-   pnpm install
+   npm install
    ```
 
 4. Create .env file: Here is an example of the `.env` file configuration:
 
    ```sh
-    NODE_ENV=development
+    NODE_ENV=<development | production>
     PORT=3000
     LOG_LEVEL=info
+    POSTGRES_USER=<your_postgres_user>
+    POSTGRES_PASSWORD=<your_postgres_password>
+    POSTGRES_HOST=<your_postgres_host>
+    POSTGRES_PORT=<your_postgres_port>
+    POSTGRES_DB=<your_postgres_db_name>
+    POSTGRES_DEV=<true | false>
+    POSTGRES_DEBUG=<true | false>
    ```
 
 ### Running the Application
@@ -43,7 +50,7 @@ Express.js and TypeScript.
 To start the application in development mode, run:
 
 ```sh
-pnpm run dev
+npm run dev
 ```
 
 The server will start on the port specified in the .env file.
